@@ -2,7 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Hiragino Kaku Gothic ProN", "NotoSansCJKjp";;
+  font-family: "Hiragino Kaku Gothic ProN", "NotoSansCJKjp";
+}
+
+.noscroll {
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
 }
 
 /* ヘッダー */
@@ -12,13 +21,17 @@ header {
   align-items: center;
   background-color: #1b1310;
   color: #fff;
-  height: 74px;
+  height: 75px;
   border-bottom: 1px solid #fff;
   padding: 0 120px;
 }
 
 .site-title {
   font-size: 26px;
+}
+
+.burger-btn {
+  display: none;
 }
 
 .nav-list {
@@ -57,7 +70,7 @@ li {
 }
 
 .contents {
-  padding-top: 45px;
+  padding-top: 40px;
   font-size: 14px;
   line-height: 30px;
 }
@@ -70,6 +83,7 @@ li {
   background-position: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -87,6 +101,10 @@ li {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.reverse {
+  flex-direction: row-reverse;
 }
 
 .service-menu-2 {
@@ -121,6 +139,7 @@ li {
 .news-menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .news-content {
@@ -182,23 +201,24 @@ label {
   margin-bottom: 5px;
 }
 
-input,textarea{
-	border: 1px solid #141414;
-	padding: 10px;
+input,
+textarea {
+  border: 1px solid #141414;
+  padding: 10px;
 }
 
 .form-send {
   text-align: center;
 }
 
-.form-btn{
+.form-btn {
   width: 235px;
   height: 59px;
-  background-color: #1B1310;
+  background-color: #1b1310;
   color: #fff;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0px 0px 6px #1B1310;
+  box-shadow: 0px 0px 6px #1b1310;
   border-radius: 30px;
   margin-top: 25px;
   margin-bottom: 50px;
@@ -207,7 +227,7 @@ input,textarea{
 /* footer */
 footer {
   height: 80px;
-  background-color: #1B1310;
+  background-color: #1b1310;
 }
 
 .footer-ms {
@@ -215,4 +235,142 @@ footer {
   color: #fff;
   text-align: center;
   padding-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0 15px;
+  }
+  /* ハンバーガーメニュー */
+  .burger-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 3;
+    border:none;
+    background-color:transparent;
+  }
+
+  .bar {
+    width: 25px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+
+  .bar-top {
+    top: 5px;
+  }
+
+  .bar-mid{
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .bar-bottom{
+    bottom: 5px;
+  }
+
+  .burger-btn.close .bar-top {
+    transform: translate(-50%,10px) rotate(45deg);
+    transition: transform .3s;
+  }
+
+  .burger-btn.close .bar-mid {
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .burger-btn.close .bar-bottom {
+    transform: translate(-50%,-8px) rotate(-45deg);
+    transition: transform .3s;
+  }
+
+  .site-menu {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .header-nav {
+    width: 100%;
+    height: 100%;
+    background-color:#1B1310;
+    z-index: 2;
+  }
+
+  .header-nav .nav-list {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+  }
+
+  .header-nav .nav-item{
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .first-view {
+    background-image: url(images/fv-bgi_sp@2x.jpg);
+  }
+
+  .fv-title {
+    font-size: 30px;
+    border: 2px solid #fff;
+    padding: 30px 40px;
+  }
+
+  .section-wrapper {
+    padding: 100px 15px 50px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  .contents {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .service-menu,
+  .service-menu-2 {
+    display: block;
+  }
+
+  #service {
+    align-items: center;
+  }
+
+  .service-image,
+  .service-image-2 {
+    height: 150px;
+    margin-bottom: 50px;
+
+  }
+
+  .news-menu {
+    flex-direction: column;
+  }
+
+  .news-content {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  .contact-form {
+    width: 345px;
+  }
 }

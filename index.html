@@ -14,12 +14,20 @@
     <div class="site-menu">
       <nav class="header-nav">
         <ul class="nav-list">
-          <li class="nav-item" href="#">About</li>
-          <li class="nav-item" href="#">Service</li>
-          <li class="nav-item" href="#">Contacts</li>
+          <li class="nav-item"><a href="#about">About</a></li>
+          <li class="nav-item"><a href="#service">Service</a></li>
+          <li class="nav-item"><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
     </div>
+    <!-- ハンバーガーメニュー -->
+    <button class="burger-btn">
+      <span class="bars">
+        <span class="bar bar-top"></span>
+        <span class="bar bar-mid"></span>
+        <span class="bar bar-bottom"></span>
+      </span>
+    </button>
   </header>
   <main>
     <!-- fv -->
@@ -39,14 +47,14 @@
     <!-- service -->
     <section class="section-wrapper" id="service">
       <div class="section-title">Service</div>
-        <div class="service-menu">
-          <div class="service-image"></div>
+        <div class="service-menu reverse">
           <div class="service-content">
             <h3 class="subtitle">リリース時のサポートで<br>サービスのブランディングを</h3>
             <p class="contents ">
               弊社では、リリース時もサポートさせて頂きます。プレスリリース用のサイトや動画制作を通して、サービスのブランディングを行わせて頂きます。
             </p>
           </div>
+          <div class="service-image"></div>
         </div>
         <div class="service-menu-2">
           <div class="service-content">
@@ -85,7 +93,7 @@
     </section>
     <!-- news fin -->
     <!-- お問い合わせ -->
-    <section class="section-wrapper" id="contact">
+    <section class="section-wrapper" id="contacts">
       <div class="section-title-contatct">お問い合わせ</div>
       <form action="" class="contact-form">
         <div class="form-part">
@@ -114,5 +122,8 @@
   <footer>
     <p class="footer-ms">©︎crest.design all rights reserved</p>
   </footer>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
